@@ -1,5 +1,5 @@
 # Phabianmuuo
-my work on github - https://phabian-exploring.exploring.github.io/portfolio/
+my work on github - https://phabianmuuo-prog.github.io/Phabianmuuo/
 my work on vercel - https://vercel.com/raph-22bd/phabianmuuo/48ZogHX2DwiqQu7YTm2pVwi9A9v9
 
 
