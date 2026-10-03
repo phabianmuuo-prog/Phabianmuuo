@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta  name="viewport" content="width=device-width,initial-scale=1.0"/>
+        <title>MY Projects </title>
+        <link rel="stylesheet" href="styles(2).css"/> 
+    </head>
+    <body>
+        <div class="container">
+            <h1>projects </h1>
+            <div class="skills">
+                <h2>HTML</h2>
+                <div class="skill-bar">
+                    <div class="html" style="width: 90%;"><span>90%</span></div>
+                </div>
+                <h2>CSS</h2>
+                <div class="skill-bar">
+                    <div class="css" style="width: 80%;"><span>80%</span></div>
+                </div>
+                <h2>Java</h2>
+                <div class="skill-bar">
+                    <div class="java" style="width: 70%;"><span>70%</span></div>
+                </div>  
+                <h2>PHP</h2>
+                <div class="skill-bar">
+                    <div class="php" style="width: 66%;"><span>66%</span></div>    
+                </div>
+                <h2>JavaScript</h2>
+                <div class="skill-bar">
+                    <div class="javascript" style="width: 60%;"><span>60%</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="project">    
+            <H2>MY PROJECTS</H2>
+            <P>Here are some of my projects:</P>
+            <p>Project 1: Transit of goods booking platform</p>
+            <p>Project 2: Event planning booking platform</p>   
+            <p>Project 3: E-commerce website for local businesses</p>
+        </div>
+        <div class="contact-me">
+            <form action="https://formspree.io/f/xppwvwqj" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="_replyto" required>
+                    <span class="error-text" id="emailErrorMsg">Please enter a valid email address.</span>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required placeholder="Your message here..."></textarea>
+                </div>
+
+                <button type="submit" class="btn">Send</button>
+                <div class="status-alert" id="statusAlert"></div>
+            </form>
+        </div>
+         <script src="script.js"></script>
+      </body> 
+    </html>
