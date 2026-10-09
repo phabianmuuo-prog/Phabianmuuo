@@ -1,15 +1,16 @@
 document.getElementById("project1").addEventListener("click", function(event) {
     event.preventDefault();prevevent the default form   submission behavior
 
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var message = document.getElementById("message").value;
+    var name = document.getElementById("name").value.trim();
+    var email = document.getElementById("email").value.trim();
+    var message = document.getElementById("message").value.trim();
 
     var nameField = document.getElementById("name");
     var emailField = document.getElementById("email");
     var messageField = document.getElementById("message");
  
     const nameError = document.getElementById("nameError");
+    const emailError= document.getElementbyid("emailEroor");
     const statusbox = document.getElementById("statusbox");
 
     let FormIsValid = true;
