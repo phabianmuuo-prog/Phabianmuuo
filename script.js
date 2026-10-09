@@ -1,34 +1,29 @@
 document.getElementById("project1").addEventListener("click", function(event) {
     event.preventDefault();prevevent the default form   submission behavior
 
-    // Get the form values 
     var name = document.getElementById("name").value;
     var email = document.getElementById("email").value;
     var message = document.getElementById("message").value;
 
-    //field node mappings
     var nameField = document.getElementById("name");
     var emailField = document.getElementById("email");
     var messageField = document.getElementById("message");
-
-    //message validation node containers 
+ 
     const nameError = document.getElementById("nameError");
     const statusbox = document.getElementById("statusbox");
 
     let FormIsValid = true;
 
-    //validate Email using regex pattern matches 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(emailField.value.trim())) {
         toggleerror(emailfield ,document.getelementbyid("") ) = true;
         
     } else {
         toggleerror(emailField, emailError, false);
-    }
-
-    //3.if form is valid ,submit it
+    } 
+    
     if (FormIsValid) {
-        //Here you would typically send the form data to a server 
+        
         statusbox.textContent = "Form submitted successfully!";
         statusbox.style.color = "status-alert-success";
     } else {
@@ -37,7 +32,6 @@ document.getElementById("project1").addEventListener("click", function(event) {
     }
     });
 
-    //helper utility function to clean state presentational toggles
     function toggleError(inputEl, errorEl, show) {
         consta parent =inputEl.parentElement;
         if (show) {
@@ -48,3 +42,41 @@ document.getElementById("project1").addEventListener("click", function(event) {
             parent.classList.remove("invalid");
         }
     }
+
+const username = "phabianmuuo-prog";
+
+    async function loadGitHubRepos() {
+        const projectsContainer = document.getElementById("github-projects");
+
+        try {
+            const response = await fetch(`https://api.github.com/users/phabianmuuo-prog/repos?sort=updated&per_page=10`);
+
+            if (!response.ok) {
+                throw new Error("unable to fetch GitHub repositories");
+            }
+
+            const repositories = await response.json();
+            console.log("Fetched repositories:", repositories);
+
+            projectsContainer.innerHTML = "";
+
+            repositories.forEach(repo => {
+                const project = document.createElement("div");
+                project.className="project-card";
+                project.innerHTML = `
+                    <h3>${repo.name}</h3>
+                    <p>${repo.description || "No description available."}</p>
+                    <a href="${repo.html_url}" target="_blank">View on GitHub</a>
+                `;
+
+                projectsContainer.appendChild(project);
+            });
+
+        } catch (error) {
+            projectsContainer.textContent="sorry,my projects could not be loaded right now .";
+            console.error("Error fetching GitHub repositories:", error);        
+        }   
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+        loadGitHubRepos(); 
+    });
